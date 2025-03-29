@@ -5,8 +5,8 @@ This collection showcases my diverse range of data-driven projects that span dif
 
 # Projects
 
-# Bushfire Brigade: A Life-Saving Educational Initiative with Bushfire Risk Prediction Model for improved preparedness (Python and Tableau)
-A transformative educational initiative that empowers children aged 8-12 in Victoria, Australia with critical bushfire safety knowledge and skills. By integrating data analytics and machine learning, the platform not only educates but also enhances preparedness through interactive simulations, aiming to save lives and foster confidence in responding to bushfire emergencies. Interactive Digital Platform: Developed a dynamic platform with real-life bushfire stories, including 1983 Ash Wednesday fires, designed to captivate children and parents while teaching essential bushfire safety.
+# Bushfire Brigade: A Life-Saving Educational Initiative with Bushfire Risk Prediction Model (Python and Tableau)
+A transformative educational initiative that empowers children aged 8-12 in Victoria, Australia with critical bushfire safety knowledge and skills. By integrating data analytics and machine learning, the platform not only educates but also enhances preparedness through interactive simulations, aiming to save lives and foster confidence in responding to bushfire emergencies. 
 
 Machine Learning for Predictive Insights:
 - Weather Data-Driven Analysis: Utilized 19 years of weather and bushfire data through QGIS to uncover key risk factors influencing bushfire outbreaks, such as temperature, wind speed, and humidity levels.
@@ -29,6 +29,19 @@ Key Insights:
 - Text Analytics with Word Clouds: A word cloud visualization of successful artworks highlights recurring themes such as abstract, modern, vibrant, and textured, indicating the artistic elements that resonate most with buyers.
 
 The Logistic Regression model developed for this project predicts the likelihood of an artwork selling based on key variables, achieving over 90% accuracy, 89% precision, and 58% recall. By leveraging these insights, artists and platform administrators can forecast sales potential, enabling artists to refine their strategies and align their work with market demand for greater success.
+
+# QGIS Spatial Analytics – Public Transport Victoria (PTV) Coverage Analysis
+
+This project uses spatial analytics to assess public transport coverage across Victoria, Australia, with a focus on identifying areas of coverage gaps and expansion opportunities for the Public Transport Victoria (PTV) network.
+
+Geospatial Data Integration: Employed PostgreSQL, Docker, QGIS, and GTFS datasets to analyze public transport data at the municipality and suburb levels.
+Accessibility Analysis: Evaluated PTV service coverage using metrics like sq km per PTV stop, revealing accessibility gaps, particularly in rural and outer suburbs.
+
+Key Findings: 
+- Identified outer LGAs like Murrindindi and Mitchell with significant coverage gaps, suggesting a need for service expansion.
+- Tram Service Expansion: Focused on high-priority suburbs for tram network expansion, such as Sunbury, Berwick, and Frankston, to improve connectivity.
+- 
+Impact: Provides data-driven insights to help PTV stakeholders improve transport infrastructure and better serve Victoria's growing population.
 
 # Australian Tourism Insights: Interactive R Shiny Dashboard for Trend Analysis and Decision-Making (R Project)
 The Australian Tourism Project utilizes R Shiny to create an interactive dashboard, providing a dynamic, data-driven analysis of tourism trends across Australia. The dashboard integrates multiple visualizations that allow users to explore various facets of tourism, offering clear, actionable insights for businesses, policymakers, and tourism operators.
@@ -64,14 +77,7 @@ The Fallen Nation of Syria is an infographic project that captures the devastati
 Project Overview
 	•	Conflict Origin: Sparked by pro-democracy protests in 2011, violently suppressed by the Syrian government under President Bashar Al-Assad.
 	•	Civil War: Escalated into a complex war involving multiple rebel groups and international powers with conflicting interests.
-	•	Major Players:
-	•	Syrian Government: Backed by Russia and Iran.
-	•	Rebel Forces: Supported by the U.S., Turkey, and Saudi Arabia.
-	•	Key Statistics (as of Dec 2018):
-	•	560,000 total air strikes by Syrian regime
-	•	111,330 civilians recorded killed
-	•	5.5+ million Syrian refugees, with 3.5 million in Turkey alone
-	•	6.6 million internally displaced persons
+	•	Major Players: Syrian Government (Backed by Russia and Iran) against Rebel Forces (Supported by the U.S., Turkey, and Saudi Arabia).
 
 Civilian Impact
 	•	Causes of death: airstrikes, shelling, shootings, executions, and more.
