@@ -1,110 +1,115 @@
 # AnalyticsAlchemy
-Data is more than just numbers—it's a goldmine of untapped potential. AnalyticsAlchemy is my portfolio, where I turn raw data into actionable insights that drive business success, social impact, and innovation. AnalyticsAlchemy is my journey of transforming data into impact, one insight at a time. 
 
-This collection showcases my diverse range of data-driven projects that span different domains such as environmental analysis, global conflict, art industry trends, and Australian tourism. Each project highlights my skills in data analysis, visualization, and predictive modeling using various tools like Python, R, QGIS, and Tableau.
+# Turning Raw Data into Real-World Impact
 
-# Projects
+Welcome to AnalyticsAlchemy—my data science and analytics portfolio where numbers come to life. Here, data isn’t just crunched—it’s transformed into insights that fuel business success, social impact, and innovation. This is my journey of turning complexity into clarity, and raw datasets into tools for better decisions.
 
-# Bushfire Brigade: A Life-Saving Educational Initiative with Bushfire Risk Prediction Model (Python and Tableau)
-A transformative educational initiative that empowers children aged 8-12 in Victoria, Australia with critical bushfire safety knowledge and skills. By integrating data analytics and machine learning, the platform not only educates but also enhances preparedness through interactive simulations, aiming to save lives and foster confidence in responding to bushfire emergencies. 
+⸻
 
-Machine Learning for Predictive Insights:
-- Weather Data-Driven Analysis: Utilized 19 years of weather and bushfire data through QGIS to uncover key risk factors influencing bushfire outbreaks, such as temperature, wind speed, and humidity levels.
-- Support Vector Machine (SVM) Model: Built a machine learning classification model to predict bushfire occurrences based on real-time weather data, providing accurate risk forecasts for proactive intervention.
-- Interactive Risk Simulation: The SVM model allows students to adjust key weather parameters, such as temperature and wind speed, and immediately see how these changes affect bushfire risk, making the learning experience more engaging and data-driven.
-- Potential for Future Alerts: While not yet implemented, the model can be used to generate real-time alerts on high-risk days in the future, helping students, families, and schools stay informed and take preventive actions ahead of bushfire threats.
+# About the Alchemist
 
-Impactful Outcomes:
-- Increased community awareness by providing data-backed insights into bushfire behavior and risk factors.
-- Empowered students and educators with tools to actively engage in risk prediction and preparedness, improving response strategies and reducing the impact of bushfire emergencies.
-- Website link: https://www.bushfire-brigade.me/
+I’m Thinithi Bulathsinghala, a data storyteller and analytics specialist passionate about using data for meaningful change. My portfolio brings together projects that blend data science, visualization, and predictive modeling to tackle problems across domains—from bushfire safety , business optimization, public transport planning to art market dynamics and climate change.
 
-# Bluethumb Art Market Insights - Web Scraping, Analysis and likelyhood of selling model (R Project)
-A data analytics project using R and web scraping techniques to extract and analyze art market trends from the Bluethumb platform.
+Whether it’s helping kids stay safe in emergencies or empowering artists to sell smarter, AnalyticsAlchemy shows what’s possible when we turn data into decisions.
+
+⸻
+
+# Featured Projects
+
+# 1. Bushfire Brigade: Life-Saving Education Meets Predictive Analytics
+
+_Python_ | _Tableau_  | _QGIS_  | _SVM Modeling_
+
+An educational platform that equips kids in Victoria, Australia with bushfire safety knowledge—backed by 19 years of weather data and a custom-built machine learning model.
+
+Highlights:
+- Trained an SVM model on weather data to predict bushfire risk.
+- Enabled interactive simulations for students to learn how changing weather affects fire probability.
+- Empowered communities with data-driven preparedness tools.
+ 
+Visit the Live Site
+
+⸻
+
+# 2. Bluethumb Art Market Insights: Predicting Sales in the Art World
+
+ _R_  | _Web Scraping_ | _Logistic Regression_
+ 
+Analyzed thousands of art listings using web scraping and built a model to predict an artwork’s chance of selling—helping artists unlock their market potential.
 
 Key Insights:
-- Emerging vs. Established Artists: New artists often struggle with visibility and sales. The art growth score model provides a data-driven approach to predict an artwork’s success based on pricing, size, style, and artist popularity, helping emerging artists navigate the market more effectively.
-- Market Trends: Analysis of historical sales data reveals which art styles, subjects, and formats perform best. Contrary to common assumptions, cityscapes (10% conversion rate) significantly outperform landscapes (2.6%), suggesting a shift in buyer preferences.
-- Buyer Preferences: Framed artworks consistently achieve higher conversion rates compared to unframed pieces, emphasizing the importance of presentation and framing choices in influencing buyer decisions.
-- Text Analytics with Word Clouds: A word cloud visualization of successful artworks highlights recurring themes such as abstract, modern, vibrant, and textured, indicating the artistic elements that resonate most with buyers.
+- Framed cityscapes outperform landscapes—10% vs. 2.6% conversion.
+- Predictive model achieved 90% accuracy in forecasting sales.
+- Word cloud visualizations reveal buyer preferences like “vibrant” and “textured.”
 
-The Logistic Regression model developed for this project predicts the likelihood of an artwork selling based on key variables, achieving over 90% accuracy, 89% precision, and 58% recall. By leveraging these insights, artists and platform administrators can forecast sales potential, enabling artists to refine their strategies and align their work with market demand for greater success.
+⸻
 
-# QGIS Spatial Analytics – Public Transport Victoria (PTV) Coverage Analysis
+# 3. PTV Coverage Analysis: Mapping Transport Gaps in Victoria
 
-This project uses spatial analytics to assess public transport coverage across Victoria, Australia, with a focus on identifying areas of coverage gaps and expansion opportunities for the Public Transport Victoria (PTV) network.
+_QGIS_ | _PostgreSQL_ | _GTFS Datasets_
 
-Geospatial Data Integration: Employed PostgreSQL, Docker, QGIS, and GTFS datasets to analyze public transport data at the municipality and suburb levels.
-Accessibility Analysis: Evaluated PTV service coverage using metrics like sq km per PTV stop, revealing accessibility gaps, particularly in rural and outer suburbs.
+Used geospatial analytics to identify gaps in public transport accessibility across Victoria, revealing critical regions like Murrindindi and Mitchell with poor coverage.
 
-Key Findings: 
-- Identified outer LGAs like Murrindindi and Mitchell with significant coverage gaps, suggesting a need for service expansion.
-- Tram Service Expansion: Focused on high-priority suburbs for tram network expansion, such as Sunbury, Berwick, and Frankston, to improve connectivity.
-- 
-Impact: Provides data-driven insights to help PTV stakeholders improve transport infrastructure and better serve Victoria's growing population.
+Impact:
+- Provided data-backed recommendations for tram expansion in high-growth suburbs.
+- Equipped transport planners with a visual, scalable framework for infrastructure decisions.
 
-# Australian Tourism Insights: Interactive R Shiny Dashboard for Trend Analysis and Decision-Making (R Project)
-The Australian Tourism Project utilizes R Shiny to create an interactive dashboard, providing a dynamic, data-driven analysis of tourism trends across Australia. The dashboard integrates multiple visualizations that allow users to explore various facets of tourism, offering clear, actionable insights for businesses, policymakers, and tourism operators.
+⸻
 
-Key features of the dashboard include:
-- Visitation Trends: A time series graph shows the monthly visitor numbers over the past five years, allowing users to identify peak travel seasons. For instance, January sees a significant spike with over 1.5 million international visitors, while June experiences a drop to 900,000. This helps businesses forecast demand during different seasons.
-- Demographics Breakdown: Interactive pie charts illustrate visitor demographics, showing that 45% of international tourists in 2023 were from Asia, with 30% from Europe, and 25% from North America. These insights enable targeted marketing strategies for specific regions.
-- Regional Performance: A geospatial map highlights the most popular tourist regions, such as Sydney, Melbourne, and the Great Barrier Reef. For example, Sydney sees a yearly increase of 8% in tourist visits, whereas some regional areas like Tasmania show a 15% growth in the last 12 months. This allows local tourism authorities to focus on underperforming areas, stimulating investment and development.
-- Visitor Spending Patterns: A bar chart visualizes how much different types of tourists spend on average, revealing that business travelers spend an average of $2,000 per trip, while backpackers average $500. This provides insight into the economic impact of different tourist segments.
+# 4. Australian Tourism Insights Dashboard
 
-The interactive nature of the dashboard allows users to filter by region, season, and tourist type to dive deeper into the data. The visualizations are designed to drive real-time decisions, enabling businesses to adjust their marketing and operational strategies based on up-to-date insights.
+_R Shiny_ | _Interactive Visualizations_
 
-# Polar Ice Caps Melting - Infographic
-Walking on Thin Ice is an infographic project that visualizes the critical state of our planet due to global warming and climate change. It explores the rising temperatures, the melting of polar ice, and the severe environmental consequences driven primarily by human activities.
+An interactive dashboard that transforms national tourism data into actionable insights for businesses, policymakers, and local governments.
 
-Key Highlights
-	•	Global Temperature Rise: An increase of +1.34°C from 1967 to 2017 due to greenhouse gas emissions.
-	•	Polar Ice Melting: Rapid mass loss in Greenland and Antarctica, contributing to rising sea levels and loss of habitat.
-	•	Impact on Wildlife: Projected declines in populations of polar bears and narwhals by 2050.
-	•	Ocean Disruption: Melting glaciers threaten to disrupt the ocean conveyor belt, causing drastic global temperature shifts.
-	•	Permafrost Threat: Potential release of 1400–1800 billion metric tonnes of CO₂ from thawing Arctic permafrost.
-	•	Major Emission Contributors: Residential, commercial, industrial, waste, and forestry sectors.
-	•	Call to Action: Emphasizes renewable energy use, reducing emissions, preventing deforestation, recycling, and spreading awareness.
+Dashboard Features:
+- Time series, maps, pie charts, and spending visualizations.
+- Drill down by region, tourist type, and season.
+- Enabled real-time strategy adjustments for stakeholders.
 
-Tools & Credits
-	•	Design: Thinithi Bulathsinghala (Made in 2017)
-	•	Sources: NOAA, NASA Earth Observatory, WWF, Our World in Data, National Geographic, The Guardian, CNBC, BBC
+⸻
 
- 
-# Syrian War 2019 Snapshot - Infographic
-The Fallen Nation of Syria is an infographic project that captures the devastating timeline of Syria’s civil war from 2011 to 2018. It explores the origins of the conflict, the key factions involved, the staggering human cost, and the ongoing refugee crisis.
+# 5. Walking on Thin Ice: Polar Ice Caps Melting (Infographic)
 
-Project Overview
-	•	Conflict Origin: Sparked by pro-democracy protests in 2011, violently suppressed by the Syrian government under President Bashar Al-Assad.
-	•	Civil War: Escalated into a complex war involving multiple rebel groups and international powers with conflicting interests.
-	•	Major Players: Syrian Government (Backed by Russia and Iran) against Rebel Forces (Supported by the U.S., Turkey, and Saudi Arabia).
+_Canva_ | _Environmental Data_ | _Visual Storytelling_
 
-Civilian Impact
-	•	Causes of death: airstrikes, shelling, shootings, executions, and more.
-	•	Age groups most affected: children and working-age adults.
-	•	High-density refugee camps concentrated near the Turkish border.
+An infographic that highlights the environmental crisis driven by climate change, with visual emphasis on melting ice caps, wildlife endangerment, and oceanic disruption.
 
-Call to Action
-This project also provides links to donation portals and urges action to support displaced Syrians.
+⸻
 
-Credits
-	•	Design: Thinithi Bulathsinghala (Made in 2019)
-	•	Sources: Syrian Observatory for Human Rights, Airwars.org, UNHCR, CNN, BBC, The Economist, and more.
+# 6. The Fallen Nation of Syria: Conflict Visualized (Infographic)
+
+_Canva_ | _Data Journalism_ | _Humanitarian Focus_
+
+An emotionally impactful timeline of Syria’s civil war, revealing the toll of war, key actors involved, and the refugee crisis—designed to raise awareness and drive action.
+
+⸻
 
 # Skills & Technologies
 
-# Data Analysis & Modeling:
-Python, R, QGIS, Octoparse web scraping
-# Data Visualization:
-Tableau and R Shiny interactive dashboards, Canva infographics
-# Statistical Methods:
-Hypothesis testing, regression analysis, classification models, Machine Learning
+Data Analysis & Modeling:
+
+_Python, R, Machine Learning (SVM, Logistic Regression), Hypothesis Testing, Classification_
+
+Data Visualization:
+
+_Tableau, R Shiny, Canva Infographics_
+
+Spatial & Web Data:
+
+_QGIS, GTFS, PostgreSQL, Octoparse (web scraping)_
+
+⸻
 
 # Key Learnings
+	•	Built dashboards that turn raw data into interactive storytelling tools.
+	•	Used web scraping to uncover hidden trends in online markets.
+	•	Applied machine learning to real-world issues—from bushfire prediction to art sales.
+	•	Developed a knack for making complex insights simple, visual, and actionable.
 
-- Building interactive data visualizations and dashboards to communicate complex insights effectively.
-- Leveraging web scraping to gather real-time data from platforms like Bluethumb to understand market trends.
-- Using machine learning to predict real-world events, like bushfires, and optimizing the models for performance.
-- Creating actionable insights to help businesses, governments, and individuals make data-driven decisions.
+Feel free to dive into the repositories, fork the code, or reach out to collaborate! This portfolio is a reflection of my growth as a data professional—and I’m just getting started.
 
-Feel free to explore the repositories, dive into the code, and check out the visualizations. I am constantly learning and improving my skills, and I hope these projects showcase my abilities in data science, analytics, and visualization.
+⸻
+
+# Let’s turn data into something powerful.
+# Let’s create alchemy.
