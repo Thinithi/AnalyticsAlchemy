@@ -111,5 +111,5 @@ Feel free to dive into the repositories, fork the code, or reach out to collabor
 
 ⸻
 
-# Let’s turn data into something powerful.
-# Let’s create alchemy.
+# Let’s turn data into something powerful!
+# Let’s create DATA ALCHEMY!
