@@ -1,0 +1,680 @@
+---
+title: "BLUETHUMB CANVAS SUCCESS PROJECT"
+output: html_document
+date: "2023-10-15"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+Creating a brand name in the art industry is indeed a challenge on its own. Bluethumb was a company
+established in 2012 with a mission to empower Australian Artists. They did not agree with the habit of
+having to wait for an artist to reach the level of having their own gallery or exhibition, instead started
+Australia’s online art gallery which today represents over 20,000 emerging and established artists
+(Bluethumb, 2023). I, myself, having the passion for art, stumbled upon their website which was very
+well made indeed. But as a new artist and user myself, there were some points I realized it lacked.
+They have an enormous customer base and an even larger artwork portfolio. Data science could
+revolutionize the way Bluethumb operates, if the website data could be utilized to provide insights into
+what are the current market trends and where do one’s artwork stands before the artist can start
+selling. This will enable emerging artists to increase the artwork sales potential by aligning with market
+trends whilst improving their own profiles to the level of those who are well established. For Bluethumb,
+this will not only increase their sales due to more artist engagement but also it will be a significant
+value add to their corporate social responsibility (CSR).  
+
+“Bluethumb Canvas Success Project” aims to provide insights on the market trends in the art industry 
+within Australia to guide new artists to areas with high demand. Further summary insights into making
+better data driven decisions when it comes to sizing, texture, topic…etc. The artwork data and artists
+profile information coupled with these insights will be incorporated into developing an art growth score
+model to indicate an artwork’s potential to sell. The model initially will not take into account the image
+of the artwork itself but rather other variables that influence a buyer’s decision. For example, art style,
+topic, size, price, frame, artist popularity, follower, count..etc. It could be later extended to include
+image analysis in phase 2.
+
+The objective of a growth score model is to provide a comparison with the
+artists who are selling and to highlight weak areas to improve on or to make better artwork wise
+decisions. As per Martin et al (2020), the moment the human brain encounters a mismatch between
+the goal and capacity it initiates a learning process. This development will provide new artists with a
+guide they can refer to in order to improve and focus their efforts into achieving the end goal of selling
+and becoming a more established artist. Whilst for Blue thumber it will drive more artist engagement
+which converts to better sales and increased CSR for the brand name. The combinations of advanced
+analytics for market analysis, artist comparison, propensity to buy mapped into an artist growth journey
+in a user friendly platform will be a novel data science initiative that stands out in the art industry. 
+
+
+## Goal and Objectives
+The goal of this project is to enable artists to drive growth which eventually converts to increase in 
+sales. The project is developed particularly for Bluethumb. The objectives are briefly mentioned below:
+ 
+**Efficient use of resources** 
+As it will enable emerging artists to focus their efforts on making creatives in areas of market interest. 
+
+**Drive growth**
+As the artwork grade would change along with the artist profile and other variables which will act as a growth indicator. 
+
+**Drive Artist Interaction**
+The more an artist can see a quantified indication of results from their efforts and not just sales, the more motivated they are to continue interacting on Bluethumb. 
+
+**Drive sales**
+Support emerging artists into making their first sale and much more as they grow.
+ 
+
+As of today, there are several challenges artists utilizing this online platform face, the project outcome
+on addressing them are shown below: 
+
+![Alt text](C:/Users/Thinithi/Monash/Sem2_2023/FIT5145_INTRO_TO_DS/Assignment/Bluethumb Data/page01.png){width=100%}
+
+## Business Model 
+
+
+![Alt text](C:/Users/Thinithi/Monash/Sem2_2023/FIT5145_INTRO_TO_DS/Assignment/Bluethumb Data/page02.png){width=100%}
+
+## Data Sources and Collection 
+
+The required for this project is already available on the Bluethumb website. When developing this
+project within Bluethumb it is a matter of tapping into their own website data utilizing APIs which will
+be enabled by the data engineer, data architect and the data scientist through collaboration. In order
+to develop a prototype the data is obtained from the website using a web scraper known as Octoparse.
+The format of the feed page is shown below where all published art is posted in the order it was
+published. The points that have been extracted are indicated by the red marker 
+
+
+### Arts for sale page
+
+
+![Alt text](C:/Users/Thinithi/Monash/Sem2_2023/FIT5145_INTRO_TO_DS/Assignment/Bluethumb Data/page03.png){width=100%}
+
+
+### Artwork page
+
+![Alt text](C:/Users/Thinithi/Monash/Sem2_2023/FIT5145_INTRO_TO_DS/Assignment/Bluethumb Data/page04.png){width=100%}
+
+
+
+### Artwork details
+
+![Alt text](C:/Users/Thinithi/Monash/Sem2_2023/FIT5145_INTRO_TO_DS/Assignment/Bluethumb Data/page05.png){width=100%}
+
+
+![Alt text](C:/Users/Thinithi/Monash/Sem2_2023/FIT5145_INTRO_TO_DS/Assignment/Bluethumb Data/page06.png){width=100%}
+
+
+
+### Artist profile page
+
+![Alt text](C:/Users/Thinithi/Monash/Sem2_2023/FIT5145_INTRO_TO_DS/Assignment/Bluethumb Data/page07.png){width=100%}
+
+
+
+### Octoparse Webscrapper
+
+The data is extracted in three stages to speed up the process. Initially, the artwork url of all the artworks in the
+feed page is obtained after which, the workflow in the scraper is set to visit each artwork webpage and
+extract the relevant data. Finally, the url of each artwork is trimmed to obtain the artist page.
+ 
+link from the extracted data and is fed into the scraper to visit each artist profile and obtain the artist data,
+after which it is stored in Artist_profile_data.csv. The three datasets are compiled into a single
+dataset named final_data.csv via excel and loaded into R Studio for data pre-processing and analysis. The
+octoparse workflows for each stage are shown below. 
+
+
+
+![Alt text](C:/Users/Thinithi/Monash/Sem2_2023/FIT5145_INTRO_TO_DS/Assignment/Bluethumb Data/page08.png){width=100%}
+
+
+
+![Alt text](C:/Users/Thinithi/Monash/Sem2_2023/FIT5145_INTRO_TO_DS/Assignment/Bluethumb Data/page09.png){width=100%}
+Data is extarcted from the Bluethumb website and compiled into a single file named final_data.csv and loaded into R Studio for data pre-processing and analysis. File line:  https://drive.google.com/file/d/1BMEo4PNLfArJddziqBzarlIscB4vpA7o/view?usp=sharing 
+
+
+## Data collected summary
+
+After the dataset was imported into R, the structure of the dataset was viewed via the glimpse() 
+function . There are total of 17 columns in the dataset and 8,714 rows of unique artwork from which
+253 are sold by now (Approx 3% conversion rate) 
+
+![Alt text](C:/Users/Thinithi/Monash/Sem2_2023/FIT5145_INTRO_TO_DS/Assignment/Bluethumb Data/page10.png){width=50%}
+
+![Alt text](C:/Users/Thinithi/Monash/Sem2_2023/FIT5145_INTRO_TO_DS/Assignment/Bluethumb Data/page11.png){width=100%}
+
+
+## Data cleaning steps
+
+
+![Alt text](C:/Users/Thinithi/Monash/Sem2_2023/FIT5145_INTRO_TO_DS/Assignment/Bluethumb Data/page12.png){width=50%}
+
+```{r install,results='hide', message=FALSE, warning=FALSE}
+# Install libraries
+#install.packages("readr")
+#install.packages("dplyr")
+#install.packages("tidyr")
+#install.packages("stringr")
+#install.packages("visdat")
+#install.packages("ggplot2")
+#install.packages("wordcloud")
+#install.packages("RColorBrewer")
+#install.packages("wordcloud2")
+#install.packages("tm")
+#install.packages("tidymodels")
+#install.packages("glmnet")
+
+# Load libraries
+library(readr)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(visdat)
+library(ggplot2)
+library(wordcloud)
+library(RColorBrewer)
+library(tm)
+library(caret)
+library(tidymodels)
+library(glmnet)
+
+
+
+
+
+```
+
+## Load dataset
+```{r load, echo=FALSE}
+# load the dataset
+data <- read_csv("final_data.csv")
+glimpse(data)
+```
+## Load dataset
+```{r prep, echo=FALSE}
+# Data Preprocessing- split columns
+
+#split size into seperate dimensions
+data <- separate(data, "size",
+                 c("width", "height","diameter"),
+                 sep = "x")
+
+# split follow into follower and profile_view counts
+data <- separate(data, "follow",
+                 c("followers", "profile_views"),
+                 sep = "\\|")
+
+#split featured column into status and image code
+data <- separate(data, "featured_artist",
+                 c("status", "code"),
+                 sep = "\\-")
+#split location into city location and other information
+data <- separate(data, "location",
+                 c("location", "other"),
+                 sep = ",", extra = "merge")
+
+# split description into category and hashtags
+data <- separate(data, "description",
+                 c("category", "hashtag"),
+                 sep = "\\n", extra = "merge")
+
+```
+## Load dataset
+```{r clean, echo=FALSE}
+
+#Clean dataset columns
+data <- data %>%
+  mutate(width = str_remove(string = width, pattern = 'cm'), # remove cm
+               width = str_remove(string = width, pattern = ' \\(W\\)'), # remove (W)
+               width = as.numeric(str_trim(width)), # remove spaces
+               height = str_remove(string = height, pattern = 'cm'), # remove cm
+               height = str_remove(string = height, pattern = ' \\(H\\)'), # remove (H)
+               height = as.numeric(str_trim(height)), # remove spaces
+               diameter = str_remove(string = diameter, pattern = 'cm'), # remove cm
+               diameter = str_remove(string = diameter, pattern = ' \\(D\\)'), # remove (D)
+               diameter = as.numeric(str_trim(diameter)),
+               area = as.numeric(width) * as.numeric(height), # calculate area
+               price  = str_remove(string = price, pattern = 'A\\$'), # remove A$
+               price  = as.numeric(str_remove(string = price, pattern = ',')),
+               hang  = str_remove(string = hang, pattern = 'This artwork is '),
+               hang  = str_remove(string = hang, pattern = 'currently '),
+               artwork  = as.numeric(str_trim(str_remove(string = artwork, pattern = 'artworks'))),
+               followers  = str_remove(string = followers, pattern = ' followers'),
+               followers  = as.numeric(str_trim(str_remove(string = followers, pattern = ' follower'))),
+               profile_views  = as.numeric(str_trim(str_remove(string = profile_views, pattern = ' profile views'))),
+               hashtag = gsub("#", "", hashtag),
+               artwork_sold = str_remove(string = artwork_sold, pattern = 'Sold \\('),
+               artwork_sold = as.numeric(str_trim(str_remove(string = artwork_sold, pattern = '\\)') )) )
+
+#Drop unnecessary
+data <- data %>%
+  select(-other, -sold_tag, -Page_URL, -artist_url, -code)
+
+glimpse(data)
+```
+
+## Load dataset
+```{r miss , echo=FALSE}
+
+# checking for missing data
+data%>%vis_dat() +
+  ggplot2::theme(legend.position = "bottom")
+```
+
+## Load dataset
+```{r treat_miss, echo=FALSE}
+# replace missing values
+data$artwork_sold <- replace(data$artwork_sold, is.na(data$artwork_sold),0)
+data$followers <- replace(data$followers, is.na(data$followers),0)
+data$profile_views <- replace(data$profile_views, is.na(data$profile_views),0)
+data$status <- replace(data$status, is.na(data$status),0)
+data$sold <- gsub("add_to_cart",'0', data$sold)
+data$sold <- gsub("sold",'1', data$sold)
+data$sold <- as.numeric(data$sold)
+glimpse(data)
+```
+
+
+
+## Load dataset
+```{r pic1, echo=FALSE}
+# Treated missing data
+data%>%vis_dat() +
+  ggplot2::theme(legend.position = "bottom")
+```
+
+## check for outliers
+```{r pic2, echo=FALSE}
+boxplot(data$price, data$area,data$likes,data$artwork,data$followers,data$profile_views,data$artwork_sold,
+        names = c("Price", "Area","likes","artwork","followers","profile_views","artwork_sold"),
+        main = "Boxplot of Price",ylab="Value",xlab='columns')
+```
+
+
+## Before Outlier Treatment
+```{r pic3, echo=FALSE}
+# data analysis
+ggplot(data,
+       aes(x = area,
+           y = price,
+           colour = sold)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) + 
+  facet_wrap(~sold)
+
+```
+
+## Outlier Treatment
+```{r out, echo=FALSE}
+
+# outlier treatment in price
+quartiles <- quantile(data$price, probs=c(.25, .75), na.rm = FALSE)
+IQR <- IQR(data$price)
+
+Lower <- quartiles[1] - 1.5*IQR
+Upper <- quartiles[2] + 1.5*IQR 
+
+data <- subset(data, data$price > Lower & data$price < Upper)
+
+# outlier treatment in area
+quartiles <- quantile(data$area, probs=c(.25, .75), na.rm = FALSE)
+IQR <- IQR(data$area)
+
+Lower <- quartiles[1] - 1.5*IQR
+Upper <- quartiles[2] + 1.5*IQR 
+
+data <- subset(data, data$area > Lower & data$area < Upper)
+```
+
+## After Outlier Treatment
+```{r pic4, echo=FALSE}
+# After outlier treatment
+ggplot(data,
+       aes(x = area,
+           y = price,
+           colour = sold)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) + 
+  facet_wrap(~sold)
+```
+
+## Confusion Matrix
+```{r matrix, echo=FALSE}
+numeric_columns <- data[, c("price","area", "height", "width", "artwork_sold", "followers", "profile_views", "likes")]
+
+# Calculate the correlation matrix
+correlation_matrix <- cor(numeric_columns)
+
+# Print the correlation matrix
+print(correlation_matrix)
+```
+
+## scatterplot of price vs area across different artist status
+```{r pic5, echo=FALSE}
+# price vs area across art status
+ggplot(data,
+       aes(x = area,
+           y = price,
+           colour = sold)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) + 
+  facet_grid(sold ~ status)
+```
+
+## Price vs Artwork Area
+```{r pic6, echo=FALSE}
+#price vs artwork area of sold artwork
+ggplot(subset(data, sold == 1), aes(x = area, y = price, colour = sold)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Scatterplot of Area vs. Price for Sold Artworks")+
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+## Artwork decription word cloud - Not sold portfolio
+```{r cloud1, echo=FALSE}
+
+#filter artworks not sold
+data02 <- data[data$sold==0,]
+# obtain categories
+categ <- data02$category
+categ <- unlist(categ)
+# Split the decriptive tags into separate categories
+split_tags <- strsplit(categ, ",\\s*")
+categories <- unlist(split_tags)
+# Remove tags starting with '#'
+categories <- categories[!grepl("^#", categories)]
+
+# creating a document term matrix (Referenced)
+dtm <- TermDocumentMatrix(categories) 
+matrix <- as.matrix(dtm) 
+# sort by word frequency
+words <- sort(rowSums(matrix),decreasing=TRUE) 
+# rownames are words and word frequency
+df <- data.frame(word = names(words),freq=words)
+df1 <- df[df$word!="art",]
+
+# Set seed to be able to reproduce
+set.seed(1234) 
+# create word cloud
+wordcloud(words = df1$word, freq = df1$freq, min.freq = 1,
+          max.words=200, random.order=FALSE, rot.per=0.35,
+          colors=brewer.pal(8, "Dark2"))
+```
+
+## Artwork decription word cloud - sold portfolio
+```{r cloud2, echo=FALSE}
+#filter artworks not sold
+data02 <- data[data$sold==1,]
+# obtain categories
+categ <- data02$category
+categ <- unlist(categ)
+# Split the decriptive tags into separate categories
+split_tags <- strsplit(categ, ",\\s*")
+categories <- unlist(split_tags)
+# Remove tags starting with '#'
+categories <- categories[!grepl("^#", categories)]
+
+# creating a document term matrix (Referenced)
+dtm <- TermDocumentMatrix(categories) 
+matrix <- as.matrix(dtm) 
+# sort by word frequency
+words <- sort(rowSums(matrix),decreasing=TRUE) 
+# rownames are words and word frequency
+df <- data.frame(word = names(words),freq=words)
+df2 <- df[df$word!="art",]
+
+# Set seed to be able to reproduce
+set.seed(1234) 
+# create word cloud
+wordcloud(words = df2$word, freq = df2$freq, min.freq = 1,
+          max.words=200, random.order=FALSE, rot.per=0.35,
+          colors=brewer.pal(8, "Dark2"))
+```
+
+## Artwork topic wise - Conversion rate
+```{r CR, echo=FALSE}
+# 
+categ <- data02$category
+categ <- unlist(categ)
+# Split the tags into separate categories
+split_tags <- strsplit(categ, ",\\s*")
+# Remove tags starting with '#'
+categories <- categories[!grepl("^#", categories)]
+categories <- unlist(split_tags)
+
+# creating a document term matrix (Referenced)
+dtm <- TermDocumentMatrix(categories) 
+matrix <- as.matrix(dtm) 
+words <- sort(rowSums(matrix),decreasing=TRUE) 
+df <- data.frame(word = names(words),freq=words)
+df3 <- df[df$word!="art",]
+
+# merge two data frames by ID
+total_df <- merge(df3,df1,by="word")
+total_df$percent <- (total_df$freq.x / total_df$freq.y)
+# Subset rows where freq.y is greater than or equal to 100
+subset_df <- total_df[total_df$freq.y >= 100, ]
+# Sort the subset by percent
+subset_df_sorted <- subset_df[order(-subset_df$percent), ]
+
+head(subset_df_sorted,20)
+
+```
+
+## Medium word cloud- art portfolio
+```{r cloud3, echo=FALSE}
+# Treated missing data
+data02 <- data
+medium <- data02$medium
+medium <- unlist(medium)
+# Split the tags into separate categories
+split_tags <- strsplit(medium, ",\\s*")
+# Remove '#' from each tag
+medium <- lapply(split_tags, function(tag_list) {
+  gsub("#", "", tag_list)
+})
+medium <- unlist(medium)
+
+
+# Create a corpus from the 'medium' data (References)
+corpus <- Corpus(VectorSource(medium))
+# Preprocess the text in the corpus
+corpus <- tm_map(corpus, content_transformer(tolower))  # Convert to lowercase
+corpus <- tm_map(corpus, removePunctuation)  # Remove punctuation
+corpus <- tm_map(corpus, removeNumbers)  # Remove numbers
+corpus <- tm_map(corpus, removeWords, stopwords("en"))  # Remove English stop words
+# Create a term-document matrix (TDM) from the pre-processed corpus
+tdm <- TermDocumentMatrix(corpus)
+# Convert the TDM to a matrix
+matrix <- as.matrix(tdm)
+# Calculate word frequencies
+word_frequencies <- rowSums(matrix)
+# Create a data frame with words and frequencies
+df4 <- data.frame(word = names(word_frequencies), freq = word_frequencies)
+words_to_remove <- c("art", "hang", "ready")
+# Filter out rows with words to remove
+df4 <- df4[!df4$word %in% words_to_remove, ]
+
+#set the seed
+set.seed(1234) # for reproducibility 
+# vizualize word cloud
+wordcloud(words = df4$word, freq = df4$freq, min.freq = 1,
+          max.words=200, random.order=FALSE, rot.per=0.35,
+          colors=brewer.pal(8, "Dark2"))
+```
+
+## Medium word cloud- sold art portfolio
+```{r cloud4, echo=FALSE}
+# Treated missing data
+data02 <- data[data$sold==1,]
+medium <- data02$medium
+medium <- unlist(medium)
+# Split the tags into separate categories
+split_tags <- strsplit(medium, ",\\s*")
+# Remove '#' from each tag
+medium <- lapply(split_tags, function(tag_list) {
+  gsub("#", "", tag_list)
+})
+medium <- unlist(medium)
+
+
+# Create a corpus from the 'medium' data
+corpus <- Corpus(VectorSource(medium))
+# Preprocess the text in the corpus
+corpus <- tm_map(corpus, content_transformer(tolower))  # Convert to lowercase
+corpus <- tm_map(corpus, removePunctuation)  # Remove punctuation
+corpus <- tm_map(corpus, removeNumbers)  # Remove numbers
+corpus <- tm_map(corpus, removeWords, stopwords("en"))  # Remove English stop words
+# Create a term-document matrix (TDM) from the preprocessed corpus
+tdm <- TermDocumentMatrix(corpus)
+# Convert the TDM to a matrix
+matrix <- as.matrix(tdm)
+# Calculate word frequencies
+word_frequencies <- rowSums(matrix)
+# Create a data frame with words and frequencies
+df5 <- data.frame(word = names(word_frequencies), freq = word_frequencies)
+words_to_remove <- c("art", "hang", "ready")
+# Filter out rows with words to remove
+df5 <- df5[!df5$word %in% words_to_remove, ]
+
+set.seed(1234) # for reproducibility 
+wordcloud(words = df5$word, freq = df5$freq, min.freq = 1,
+          max.words=200, random.order=FALSE, rot.per=0.35,
+          colors=brewer.pal(8, "Dark2"))
+```
+
+## Medium conversion rates
+```{r cr2, echo=FALSE}
+# merge two data frames by ID
+total_df <- merge(df4,df5,by="word")
+total_df$percent <- (total_df$freq.y / total_df$freq.x)
+subset_df <- total_df[total_df$freq.x >= 200, ]  # Subset rows where freq.y is greater than or equal to 100
+subset_df_sorted <- subset_df[order(-subset_df$percent), ]  # Sort the subset by percent
+
+head(subset_df_sorted,20)
+```
+
+## Scaling data between 0-1
+```{r scale, echo=FALSE}
+
+# Define the numeric variables to min-max scale
+numeric_vars <- c("sold","likes", "area", "price", "artwork", "followers", "profile_views", "artwork_sold")
+data_log <- data[numeric_vars]
+
+# Create a pre-processing object for min-max scaling
+process <- preProcess(data_log[numeric_vars], method = c("range"))
+
+# Apply the pre-processing to the selected variables
+data_log[numeric_vars] <- predict(process, newdata = data_log[numeric_vars])
+data_log$sold = as.factor(data_log$sold)
+glimpse(data_log)
+
+```
+
+## Logistic model training
+```{r model, echo=FALSE}
+# Split data into train and test
+set.seed(0)
+split <- initial_split(data_log, prop = 0.8, strata = sold)
+train <- split %>% training()
+test <- split %>% testing()
+
+# Train a logistic regression model
+model <- logistic_reg(mixture = double(1), penalty = double(1)) %>%
+  set_engine("glmnet") %>%
+  set_mode("classification") %>%
+  fit(sold ~ ., data = train)
+
+# Model summary
+tidy(model)
+
+# Class Predictions
+pred_class <- predict(model,
+                      new_data = test,
+                      type = "class")
+
+# Class Probabilities
+pred_proba <- predict(model,
+                      new_data = test,
+                      type = "prob")
+
+results <- test %>%
+  select(sold) %>%
+  bind_cols(pred_class, pred_proba)
+
+head(results)
+```
+
+## model performance
+```{r metric, echo=FALSE}
+# Create confusion matrix
+conf_matrix <- conf_mat(results, truth = sold,
+         estimate = .pred_class)
+print(conf_matrix)
+
+#calculate accuracy
+accuracy(results, truth = sold, estimate = .pred_class)
+
+# Calculate precision
+precision <- 25/ (25+3)
+print(precision)
+
+# Calculate precision
+recall <- 25/(25+18)
+print(recall)
+
+```
+
+## Derive probabilities for the full dataset using the model
+```{r predict, echo=FALSE}
+# Get probabilities for the entire dataset
+probabilities_full <- predict(model, new_data = data_log, type = "prob")
+
+# Assuming "sold" is the class of interest
+probability_sold <- probabilities_full[, ".pred_1"] 
+
+# Add the probabilities to the original data
+data_log <- cbind(data_log, Prob_Sold = probability_sold)
+```
+
+## Derive artwork growth level
+```{r bin, echo=FALSE}
+#perform binning with specific number of bins
+data_log <- data_log %>% mutate(new_bin = cut(.pred_1, breaks=10))
+
+unique_values <- unique(data_log$new_bin)
+unique_values[order(unique_values)]
+
+data_log$new_bin <- gsub("\\(-0.000999,0.1\\]", 'Level_01', data_log$new_bin)
+data_log$new_bin <- gsub("\\(0.1,0.2\\]", 'Level_02', data_log$new_bin)
+data_log$new_bin <- gsub("\\(0.2,0.3\\]", 'Level_03', data_log$new_bin)
+data_log$new_bin <- gsub("\\(0.3,0.4\\]", 'Level_04', data_log$new_bin)
+data_log$new_bin <- gsub("\\(0.4,0.5\\]", 'Level_05', data_log$new_bin)
+data_log$new_bin <- gsub("\\(0.5,0.6\\]", 'Level_06', data_log$new_bin)
+data_log$new_bin <- gsub("\\(0.6,0.7\\]", 'Level_07', data_log$new_bin)
+data_log$new_bin <- gsub("\\(0.7,0.8\\]", 'Level_08', data_log$new_bin)
+data_log$new_bin <- gsub("\\(0.8,0.9\\]", 'Level_09', data_log$new_bin)
+data_log$new_bin <- gsub("\\(0.9,1\\]", 'Level_10', data_log$new_bin)
+
+# Create a new data frame with both datasets side by side
+data <- data.frame(data, artwork_growth = data_log$new_bin)
+glimpse(data)
+```
+
+## Visualizing model coefficent importance
+```{r coeff, echo=FALSE}
+coeff <- tidy(model) %>% 
+  arrange(desc(abs(estimate))) %>% 
+  filter(abs(estimate) > 0.5)
+
+ggplot(coeff, aes(x = term, y = estimate, fill = term)) + geom_col() + coord_flip()
+```
+References:
+
+https://stackoverflow.com/questions/70522236/combine-lapply-and-gsub-to-replace-a-list-of-values-for-another-list-of-values
+
+https://www.digitalocean.com/community/tutorials/normalize-data-in-r
+
+https://www.datacamp.com/tutorial/logistic-regression-R
+
+https://stackoverflow.com/questions/53357700/cleaning-a-column-in-a-dataset-r
+
+https://towardsdatascience.com/create-a-word-cloud-with-r-bde3e7422e8a
+
